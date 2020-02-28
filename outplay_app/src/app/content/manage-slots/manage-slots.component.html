@@ -1,0 +1,37 @@
+<div class="manage-slot-cont">
+
+  <div class="header-cont">
+
+    <div class="usr-msg">
+      <span class="succ-msg">{{ succMsg }}</span>
+      <span class="err-msg">{{ errorMsg }}</span>
+    </div>
+
+    <div class="act-btn">
+      <button (click)="addSlot()" class="btn-primary">
+        Add Slot
+      </button>
+  
+      <button (click)="deleteSlot()" class="btn-primary">
+        Delete Slot
+      </button>
+    </div>
+
+  </div>
+  
+  <div class="slot-cont">
+
+    <div class="day-cont" *ngFor="let day of days">
+
+      <span class="day-text"><b>{{ day }}</b></span>
+
+      <div class="time-cont" *ngFor="let slot of currDaySlots | filterSlot : day | orderBy : 'startTs'" (click)="onSlotSelect(slot)"
+        [class.active]="selectedSlot?.slotId === slot.slotId">
+        <span> {{ slot.startTs | time }} - {{ slot.endTs | time }} </span>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

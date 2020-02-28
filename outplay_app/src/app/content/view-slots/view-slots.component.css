@@ -1,0 +1,21 @@
+.view-booked-slots {
+  width: 100%;
+}
+
+table {
+  width: 100%;
+}
+
+.no-text {
+  font-size: 25px;
+}
+
+.card-cont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+img {
+  width: 20vh;
+}

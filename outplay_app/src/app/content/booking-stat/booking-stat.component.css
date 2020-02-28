@@ -1,0 +1,13 @@
+.book-stat-cont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-msg {
+  padding: 10px;
+}
+
+.btn-primary {
+  width: 30%;
+}

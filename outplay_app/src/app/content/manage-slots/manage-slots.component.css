@@ -1,0 +1,51 @@
+.slot-cont {
+  display: flex;
+}
+
+.day-cont {
+  width: 15%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.header-cont {
+  display: flex;
+  justify-content: space-between;
+  padding : 0 0 2vh 0;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.time-cont {
+  border: 1px solid #cccccc;
+  padding: 10px 5px;
+  height: 20px;
+  width: 150px;
+  margin: 15px;
+  border-radius: 6%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.day-text {
+  border-bottom: 1px solid #eaeaea;
+  padding: 20px 0 10px 0;
+}
+
+.btn-primary {
+  margin-left: 10px;
+}
+
+.err-msg {
+  color: red;
+}
+
+.succ-msg {
+  color: green;
+}
+
+.active {
+  background: red;
+}

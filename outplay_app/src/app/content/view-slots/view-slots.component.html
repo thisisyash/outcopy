@@ -1,0 +1,31 @@
+<div class="view-booked-slots" *ngIf="bookedSlots.length && showComp">
+
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <ng-container matColumnDef="dayTs">
+      <th mat-header-cell *matHeaderCellDef> Date </th>
+      <td mat-cell *matCellDef="let element"> {{ element.dayTs  | date }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="slotTime">
+      <th mat-header-cell *matHeaderCellDef> Slot Time </th>
+      <td mat-cell *matCellDef="let element"> {{ slotMap[element.slotId].startTs | time }} - {{ slotMap[element.slotId].endTs | time }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="userName">
+        <th mat-header-cell *matHeaderCellDef> User Name </th>
+        <td mat-cell *matCellDef="let element"> {{ element.userName }} </td>
+      </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="coloumnNames"></tr>
+    <tr mat-row *matRowDef="let row; columns: coloumnNames;"></tr>
+  </table>
+
+</div>
+
+<div class="view-booked-slots" *ngIf="!bookedSlots.length && showComp">
+  <mat-card class="card-cont">
+    <span class="no-text">No Slots booked yet.</span>
+    <img src="https://previews.123rf.com/images/asmati/asmati1701/asmati170100019/68986650-no-calendar-sign-illustration-.jpg">
+  </mat-card>
+</div>

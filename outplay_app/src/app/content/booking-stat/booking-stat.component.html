@@ -1,0 +1,11 @@
+<div class="book-stat-cont">
+  <div *ngIf="currStatus === STATUS.SUCCESS" class="stat-msg">
+    Booking Successfull.
+  </div>
+  <div *ngIf="currStatus === STATUS.FAILURE" class="stat-msg">
+    Booking Failure.
+  </div>
+  <button (click)="goHome()" class="btn-primary">
+    Home
+  </button>
+</div>

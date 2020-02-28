@@ -1,0 +1,104 @@
+<div class="add-slot-cont">
+
+	<div class="day-sel">
+		<mat-form-field>
+			<mat-label>Select a Day</mat-label>
+			<mat-select [(value)]="selectedDay">
+				<mat-option *ngFor="let day of days" [value]="day">
+					{{day}}
+				</mat-option>
+			</mat-select>
+		</mat-form-field>
+	</div>
+
+	<div class="picker">
+		<div class="from-picker">
+
+				<span class="label-text">From : </span>
+
+				<div class="time-picker">
+					<div class="time-input">
+						<div class="btn-inc" (click)="increment(TIME_FORMAT.HOURS)">
+							<i class="fa fa-angle-up fa-2x" aria-hidden="true"> </i>
+						</div>
+						<input type="number" (keypress)="maxLengthCheck($event)" [(ngModel)]="hours">
+						<div class="btn-dec" (click)="decrement(TIME_FORMAT.HOURS)">
+							<i class="fa fa-angle-down fa-2x" aria-hidden="true"> </i>
+						</div>
+					</div>
+						
+					<div class="time-input">
+						<div class="btn-inc" (click)="increment(TIME_FORMAT.MINUTES)">
+							<i class="fa fa-angle-up fa-2x" aria-hidden="true"> </i>
+						</div>
+						<input type="number" (keypress)="maxLengthCheck($event)" [(ngModel)]="minutes">
+						<div class="btn-dec"(click)="decrement(TIME_FORMAT.MINUTES)">
+							<i class="fa fa-angle-down fa-2x" aria-hidden="true"> </i>
+						</div>
+					</div>
+				
+					<div class="time-input">
+						<div class="btn-inc" (click)="changeMer()">
+							<i class="fa fa-angle-up fa-2x" aria-hidden="true"> </i>
+						</div>
+						<div class="time-mer">{{ isAm ? 'AM' : 'PM'}}</div>
+						<div class="btn-dec"(click)="changeMer()">
+							<i class="fa fa-angle-down fa-2x" aria-hidden="true"> </i>
+						</div>
+					</div>
+				</div>
+
+		</div>
+
+		<div class="to-picker">
+
+			<span class="label-text">To : </span>
+
+			<div class="time-picker">
+				<div class="time-input">
+					<div class="btn-inc" (click)="increment(TIME_FORMAT.HOURS, false)">
+						<i class="fa fa-angle-up fa-2x" aria-hidden="true"> </i>
+					</div>
+					<input type="number" (keypress)="maxLengthCheck($event)" [(ngModel)]="toHrs">
+					<div class="btn-dec" (click)="decrement(TIME_FORMAT.HOURS, false)">
+						<i class="fa fa-angle-down fa-2x" aria-hidden="true"> </i>
+					</div>
+				</div>
+					
+				<div class="time-input">
+					<div class="btn-inc" (click)="increment(TIME_FORMAT.MINUTES, false)">
+						<i class="fa fa-angle-up fa-2x" aria-hidden="true"> </i>
+					</div>
+					<input type="number" (keypress)="maxLengthCheck($event)" [(ngModel)]="toMins">
+					<div class="btn-dec"(click)="decrement(TIME_FORMAT.MINUTES, false)">
+						<i class="fa fa-angle-down fa-2x" aria-hidden="true"> </i>
+					</div>
+				</div>
+			
+				<div class="time-input">
+					<div class="btn-inc" (click)="changeMer(false)">
+						<i class="fa fa-angle-up fa-2x" aria-hidden="true"> </i>
+					</div>
+					<div class="time-mer">{{ toIsAm ? 'AM' : 'PM'}}</div>
+					<div class="btn-dec"(click)="changeMer(false)">
+						<i class="fa fa-angle-down fa-2x" aria-hidden="true"> </i>
+					</div>
+				</div>
+				
+			</div>
+
+		</div>
+	</div>
+
+
+</div>
+
+<div class="error-msg">
+	<span class="error-text">{{errorMsg}}</span>
+</div>
+
+<div class="footer-btns">
+	<button (click)="close()" class="btn-primary">Cancel</button>
+	<button (click)="submit()" class="btn-primary">submit</button>
+</div>
+

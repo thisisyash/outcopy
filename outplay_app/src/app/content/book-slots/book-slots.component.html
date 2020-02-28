@@ -1,0 +1,37 @@
+<div class="book-slots-cont">
+
+  <span class="label-text"><b>Enter your name</b></span>
+  <div class="user-name">
+    <input mat-input [(ngModel)]="userName">
+  </div>
+
+  <span class="label-text"><b>Select a slot</b></span>
+
+  <div class="cal-main-cont">
+    <div class="cal-cont">
+      <mat-calendar [minDate]="today" #datePicker (selectedChange)="change($event)"
+      [selected]="selectedDate"></mat-calendar>
+    </div>
+
+    <div class="slots-cont">
+      <ng-container *ngIf="currDaySlots.length">
+        <div class="slot" *ngFor="let slot of currDaySlots | orderBy : 'startTs'" 
+              [ngClass]="{'slot-booked' : slot.slotId===selectedSlot?.slotId}"
+              (click)="selectSlot(slot)">
+          {{ slot.startTs | time }} - {{ slot.endTs | time }}
+        </div>
+      </ng-container>
+      <div class="slot" *ngIf="!currDaySlots.length"> 
+        No Slots available for the selected day, please select another day.
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer-btn">
+  <div class="err-text">{{ errorMsg }}</div>
+  <div class="book-btn">
+    <button (click)="bookSlot()" class="btn-primary">Book Slot</button>
+  </div>
+</div>

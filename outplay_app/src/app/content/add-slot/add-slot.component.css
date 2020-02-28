@@ -1,0 +1,117 @@
+
+
+input[type=number] {
+  padding:10px; 
+  border:2px solid #ccc; 
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  background: #fbfbfb;
+  height: 20px;
+  width: 40px;
+  text-align: center;
+  font-size: 20px;
+  margin: 10px;
+}
+
+
+.time-mer {
+  padding:10px; 
+  height: 20px;
+  width: 40px;
+  text-align: center;
+  font-size: 20px;
+  margin: 10px;
+  pointer-events: none;
+  user-select: none;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+
+.time-picker {
+  display: flex;
+}
+
+.time-input {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-inc, .btn-dec{
+  width: 60%;
+  display: flex;
+  justify-content: center; 
+  cursor: pointer;
+}
+
+.btn-dec :hover {
+  background: #cccccc;
+  width: 100%;
+  display: flex;
+  justify-content: center; 
+}
+
+.btn-inc :hover {
+  background: #cccccc;
+  width: 100%;
+  display: flex;
+  justify-content: center; 
+}
+
+
+.add-slot-cont {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.from-picker {
+  display: flex;
+  flex-direction: column;
+  margin-right: 100px;
+}
+
+.to-picker {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.error-msg {
+  height: 5vh;
+  display: flex;
+  align-items: center;
+}
+
+.error-text {
+  color: red;
+  width: 90%;
+}
+
+
+.picker {
+  display: flex;
+}
+
+.day-sel {
+  margin-bottom : 20px;
+}
+
+.label-text {
+  padding: 10px;
+}
+
+.btn-primary {
+  margin-right: 10px;
+}
+
+.footer-btns {
+  margin: 10px 0;
+}

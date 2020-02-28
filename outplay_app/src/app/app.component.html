@@ -1,0 +1,14 @@
+<div class="toolbar">
+  <span class="toolbar-text">Outplay Meeting</span>  
+</div>
+
+<div class="main-cont">
+  <div class="header" *ngIf="!isLanding">
+    <div class="back-btn">
+      <i class="fa fa-arrow-left back-arr" (click)="goBack()"></i>
+      Back
+    </div>  
+  </div>
+  <router-outlet (activate)="activate($event)"></router-outlet>
+</div>
+

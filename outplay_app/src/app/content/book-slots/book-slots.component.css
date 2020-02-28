@@ -1,0 +1,50 @@
+.cal-cont {
+  border-right: 1px solid #d8d8d8;
+  width: 50%;
+
+}
+
+.book-slots-cont {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+
+.slots-cont {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.slot {
+  border-bottom: 1px solid #bbbbbb;
+  padding: 10px 5px;
+  cursor: pointer;
+}
+
+.slot-booked {
+  background: #9ac7ff
+}
+
+.footer-btn {
+  display: flex;
+  padding: 15px 0;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+}
+
+.err-text {
+  color: red;
+}
+
+.cal-main-cont {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid #d8d8d8;
+}
+
+.label-text {
+  margin-bottom : 10px;
+  margin-top: 10px;
+}
